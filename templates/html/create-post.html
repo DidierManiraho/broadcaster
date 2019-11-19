@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Broadcast</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="navbar">
+            <a href="home.html">BROADCAST</a>
+
+            <div class="link-right-position">
+                <!-- <a href="#">Inbox</a>
+               <a href="sent.html">Sent</a>
+               <a href="drafts.html">Drafts</a> -->
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Red Flag
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a id="myBtn">Drafts</a>
+                        <a href="deleted.html">Delete</a>
+                        <a href="investigated.html">Investigation</a>
+                        <a href="rejected.html">Rejected</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Intervention
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a id="myBtn">Drafts</a>
+                        <a href="deleted.html">Delete</a>
+                        <a href="investigation.html">Investigation</a>
+                        <a href="drafted.html">Rejected</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Didier
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="profile.html">Profile</a>
+                        <a href="index.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <h1 class="header-one">Create</h1>
+        <form action="" class="form-new-message">
+            <select class="input-field dropdown-padding">
+                <option value="intervantion">Intervention</option>
+                <option value="redflag">Red flag</option>
+            </select>
+
+            <div class="input-container">
+                <input class="input-field" id="my-field" type="text" placeholder="Title" name="usrnm" />
+            </div>
+            <div class="input-container">
+                <input class="input-field" id="my-field" type="text" placeholder="Subtitle" name="email" />
+            </div>
+            <div class="input-container">
+                <textarea class="input-field" placeholder="Message" id="my-field" name="Description" rows="20"
+                    cols="37"></textarea>
+            </div>
+            <div class="input-container">
+                <input type="file" name="pic" accept="image/*" />
+            </div>
+
+            <button type="submit" class="btn-new">SEND</button>
+        </form>
+    </main>
+    <br />
+    <footer class="footer new-message">
+        <p>Broadcast &copy; 2019</p>
+    </footer>
+</body>
+
+</html>
