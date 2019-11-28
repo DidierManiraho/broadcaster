@@ -373,6 +373,12 @@ header.topbar {
     border: 1px solid #e3f2fd;
 }
 
+.input-drop {
+    width: 30%;
+
+
+}
+
 .input-field:focus {
     border: 2px solid dodgerblue;
 }
