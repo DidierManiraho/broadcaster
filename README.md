@@ -10,6 +10,17 @@ Broadcaster enables any/every citizen to bring any form of corruption to the not
 - Users can view all the posted intervention.
 - Admin can change the status of redflag or intervention.
 
+## API Endpoints
+
+| Request Url | Methods  | Description  |
+| ------- | --- | --- |
+| /api/v1/incident | POST | Create incident |
+| /api/v2/incident | GET | Get incident  |
+| /api/v1/:id | PATCH | Update incident |
+| /api/v1/user | GET | Get all users |
+| /api/v1/user/signup | POST | User Register |
+| /api/v1/user/signin | POST | User login|
+
 
 ## Getting Started
 To get started with this project you have to follow all instruction below carefully and implement.
