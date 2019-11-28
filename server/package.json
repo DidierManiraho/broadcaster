@@ -8,6 +8,10 @@
     "test": "nyc --reporter=html --reporter=text mocha --require @babel/register --timeout 10000 --exit",
     "coverage": "nyc report --reporter=text-lcov | coveralls "
   },
+  "keywords": [
+    "broadcaster",
+    "heroku"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
