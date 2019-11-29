@@ -3,8 +3,8 @@ const app = express();
 import bodyParser from 'body-parser';
 import morgan from 'morgan';
 
-import incidentsRoutes from './server/routes/redflags';
-import userRoutes from './server/routes/user';
+import incidentsRoutes from '../broadcaster/server/server/routes/redflags';
+import userRoutes from '../broadcaster/server/server/routes/user';
 
 // get setting of app
 app.use(bodyParser.json());
