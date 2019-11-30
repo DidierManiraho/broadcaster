@@ -15,7 +15,6 @@ export const getAllUsers = (req, res) => {
 export const signup = (req, res) => {
     let email = req.body.email;
     //let username = req.body.username;
-
     const isUserExist = User.find(el => el.email === email);
     if (isUserExist)
         return res.status(404).json({
@@ -29,9 +28,27 @@ export const signup = (req, res) => {
         email: req.body.email,
         phoneNumber: req.body.phoneNumber,
         username: req.body.username,
-        password: pwd,
-
+        password: pwd
     };
+    const id = user.id;
+    console.log(id);
+    //create token
+    let token = jwt.sign({
+            email: email,
+            id
+        },
+        'secrete', {
+            expiresIn: '1h' // expires in 1hours
+        }
+    );
+    // return the JWT token for the future API calls
+    res.status(200).header('token', token).json({
+        success: true,
+        message: 'Authentication successful!',
+        token: token
+
+    });
+
     User.push(user);
     return res.status(201).json({
         message: 'user has been created successfully',
@@ -53,36 +70,17 @@ export const signin = (req, res) => {
     console.log(id);
     if (email.length !== 0 || password.length !== 0) {
         const checkpwd = bcrypt.compareSync(password, isUserExist.password);
-        if (checkpwd) {
-            let token = jwt.sign({
-                    email: email,
-                    id
-                },
-                'secrete', {
-                    expiresIn: '1h' // expires in 1hours
-                }
-            );
-            // return the JWT token for the future API calls
-            res.status(200).header('token', token).json({
-                success: true,
-                message: 'Authentication successful!',
-                token: token
-
+        if (checkpwd && isUserExist) {
+            res.status(200).json({
+                status: 200,
+                message: 'User Login.'
             });
-
         } else {
             console.log(isUserExist);
-            res.send(403).json({
-                success: false,
+            res.status(403).json({
+                success: 403,
                 message: 'Incorrect username or password'
             });
         }
-    } else {
-        res.send(400).json({
-            success: false,
-            message: 'Authentication failed! Please check the request'
-        });
     }
-
-
 };
